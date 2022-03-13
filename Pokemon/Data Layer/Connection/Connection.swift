@@ -25,7 +25,7 @@ class Connection {
             
             if error != nil {
                 DispatchQueue.main.async { completion(nil)
-                    print(error)
+                    
                 }
                 return
             }

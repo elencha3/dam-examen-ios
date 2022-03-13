@@ -10,6 +10,10 @@ import UIKit
 
 class ImageViewController: UIViewController {
 
+    @IBOutlet weak var bigImage: UIImageView!
+    
+    var pokemonUrl: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

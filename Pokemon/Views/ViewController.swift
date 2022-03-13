@@ -16,14 +16,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var connection = Connection()
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.alpha = 0.0
+        title="List"
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         downloadPokemonsInfo()
     }
     
     // MARK: - UITableView delegate
+     func numberOfSections(in tableView: UITableView) -> Int {
+          
+           return 1
+       }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65.0
@@ -35,7 +48,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell", for: indexPath) as! PokemonCell
-        cell.pokemonNameLabel.text = pokemonList?.results[indexPath.row].name.capitalized
+        
+        if let pokemonList = pokemonList {
+            cell.pokemonNameLabel.text = pokemonList.results[indexPath.row].name.capitalized
+        }
+      
         return cell
     }
     
@@ -55,12 +72,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
+    
+    
     func downloadPokemonsInfo() {
         
         connection.getPokemonList { pokemonList in
             if let pokemonsList = pokemonList {
                 self.pokemonList = pokemonsList
-                print(pokemonList?.results[2].name)
+                self.activityIndicator.isHidden = true
             }
         }
         

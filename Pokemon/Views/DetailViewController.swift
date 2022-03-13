@@ -23,11 +23,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "List"
+        title = "Pokemon"
         pokemonNameLabel.text = pokemonName
-        pokemonNameLabel.tintColor = .blue
-        battleSwitch.tintColor = .blue
-        megaSwitch.tintColor = .blue
+       
         getPokemon()
     }
     
@@ -45,6 +43,8 @@ class DetailViewController: UIViewController {
                         self.battleSwitch.isOn = pokemon.battleOnly ?? false
                         if(self.battleSwitch.isOn) {
                             self.view.backgroundColor = .lightGray
+                        } else {
+                            self.view.backgroundColor = .white
                         }
 
                         self.defaultSwitch.isOn = pokemon.isDefault ?? false
@@ -57,4 +57,16 @@ class DetailViewController: UIViewController {
                }
            }
        }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowBigImage" {
+            if let imageVC = segue.destination as? ImageViewController, let indexPath = sender as? IndexPath {
+                if let url = sender as? String {
+                    imageVC.pokemonUrl = pokemonUrl
+                }
+                
+                
+            }
+        }
+    }
 }

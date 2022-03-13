@@ -23,6 +23,7 @@
 		49A141A8241AA51300A82E66 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A141A7241AA51300A82E66 /* ImageDownloader.swift */; };
 		49A141AA241AADE100A82E66 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A141A9241AADE100A82E66 /* DetailViewController.swift */; };
 		EC85940827DE0491001A0485 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC85940727DE0491001A0485 /* ImageViewController.swift */; };
+		EC85940B27DE1755001A0485 /* SpriteWithoutMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC85940A27DE1755001A0485 /* SpriteWithoutMappable.swift */; };
 		EE0633E425B19CB700885E1B /* Pokemon Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE0633E325B19CB700885E1B /* Pokemon Solid.ttf */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		49A141A7241AA51300A82E66 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		49A141A9241AADE100A82E66 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EC85940727DE0491001A0485 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		EC85940A27DE1755001A0485 /* SpriteWithoutMappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteWithoutMappable.swift; sourceTree = "<group>"; };
 		EE0633E325B19CB700885E1B /* Pokemon Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon Solid.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 				4944D8B723F0F01700F04701 /* Sprite.swift */,
 				4944D8B923F0F05F00F04701 /* Pokemon.swift */,
 				49403A97241A973C0003A4BB /* PokemonList.swift */,
+				EC85940A27DE1755001A0485 /* SpriteWithoutMappable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				4944D8A223F0EA3D00F04701 /* AppDelegate.swift in Sources */,
 				49A141AA241AADE100A82E66 /* DetailViewController.swift in Sources */,
 				4944D8A423F0EA3D00F04701 /* SceneDelegate.swift in Sources */,
+				EC85940B27DE1755001A0485 /* SpriteWithoutMappable.swift in Sources */,
 				4944D8B623F0EA6E00F04701 /* Mappable.swift in Sources */,
 				EC85940827DE0491001A0485 /* ImageViewController.swift in Sources */,
 				49A141A6241AA05900A82E66 /* PokemonCell.swift in Sources */,
