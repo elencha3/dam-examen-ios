@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var battleSwitch: UISwitch!
     @IBOutlet var defaultSwitch: UISwitch!
     @IBOutlet var megaSwitch: UISwitch!
+    @IBOutlet weak var ampliarImagen: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

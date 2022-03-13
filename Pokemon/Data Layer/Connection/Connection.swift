@@ -23,8 +23,10 @@ class Connection {
         let task = urlSession.dataTask(with: url) {
             data, response, error in
             
-            if error == nil {
-                DispatchQueue.main.async { completion(nil) }
+            if error != nil {
+                DispatchQueue.main.async { completion(nil)
+                    print(error)
+                }
                 return
             }
             DispatchQueue.main.async {

@@ -13,17 +13,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var tableView: UITableView!
     
     var pokemonList: PokemonList?
-    var pokemons: [Pokemon?] = []
-        var images: [UIImage?] = []
-        let MAX_POKEMONS = 20
-        var imagesDownload = 0
-        var connection = Connection()
+    
+    var connection = Connection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.alpha = 0.0
-//        downloadPokemonsInfo()
+        downloadPokemonsInfo()
     }
     
     // MARK: - UITableView delegate
@@ -58,27 +55,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
-//    func downloadPokemonsInfo() {
-//            for i in 1...MAX_POKEMONS {
-//                connection.getPokemon(withId: i) { (pokemon) in
-//                    if let pokemon = pokemon, let id = pokemon.id {
-//                        self.pokemons[id - 1] = pokemon
-//                        if let image = pokemon.sprites?.front_default{
-//                            self.connection.getSprite(with: image) { (image) in
-//                                self.imagesDownload = self.imagesDownload + 1
-//                                if let image = image {
-//                                    self.images[id-1] = image
-//                                }
-//                                if self.imagesDownload == self.MAX_POKEMONS {
-//                                    DispatchQueue.main.async {
-//                                        self.tableView.reloadData()
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
+    func downloadPokemonsInfo() {
+        
+        connection.getPokemonList { pokemonList in
+            if let pokemonsList = pokemonList {
+                self.pokemonList = pokemonsList
+                print(pokemonList?.results[2].name)
+            }
+        }
+        
+    }
+    
 }
 
